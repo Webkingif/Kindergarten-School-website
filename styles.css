@@ -1,0 +1,282 @@
+/* =========================================
+   1. VARIABLES & RESET
+   ========================================= */
+:root {
+    /* Playful Palette */
+    --soft-green: #A8E6CF;
+    --dark-green: #2E8B57;
+    --sky-blue: #BAE1FF;
+    --deep-blue: #4A90E2;
+    --soft-yellow: #FFFFB1;
+    --sunny-yellow: #F4D03F;
+    --warm-bg: #FEFCF5;
+    --pure-white: #ffffff;
+    --text-dark: #333333;
+    --text-light: #666666;
+
+    /* Physics */
+    --radius-l: 24px;
+    --radius-s: 12px;
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    --transition: 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    /* Playful, readable system fonts */
+    font-family: 'Nunito', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    background-color: var(--warm-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+img { max-width: 100%; display: block; border-radius: var(--radius-s); }
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   2. NAVBAR
+   ========================================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    z-index: 1000;
+    padding: 1rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--dark-green);
+}
+
+/* Mobile Menu Hidden by default */
+.nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    transform: translateY(-150%);
+    transition: transform var(--transition);
+    box-shadow: 0 10px 10px rgba(0,0,0,0.05);
+    z-index: -1;
+}
+
+.nav-menu.active {
+    transform: translateY(0);
+}
+
+.nav-menu ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem;
+}
+
+.nav-link {
+    display: block;
+    padding: 1rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.btn-highlight {
+    color: var(--deep-blue);
+    background: var(--sky-blue);
+    border-radius: 50px;
+    margin-top: 0.5rem;
+}
+
+/* Hamburger */
+.menu-toggle {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--text-dark);
+    transition: var(--transition);
+}
+
+/* =========================================
+   3. HERO SECTION
+   ========================================= */
+.hero {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+.highlight { color: var(--dark-green); }
+
+.hero-image { margin-top: 2rem; }
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--sunny-yellow);
+    color: var(--text-dark);
+    font-weight: 800;
+    border-radius: 50px;
+    box-shadow: 0 4px 0 #D4AC0D; /* Tactile button feel */
+    transition: transform 0.1s;
+    margin-top: 1rem;
+}
+.cta-button:active {
+    transform: translateY(4px);
+    box-shadow: none;
+}
+
+/* =========================================
+   4. PROGRAMS (GRID)
+   ========================================= */
+.section { padding: 4rem 0; }
+.alt-bg { background-color: white; border-radius: var(--radius-l); margin: 2rem 0; }
+
+.section-title { text-align: center; font-size: 2rem; margin-bottom: 0.5rem; }
+.section-subtitle { text-align: center; margin-bottom: 3rem; color: var(--text-light); }
+
+.programs-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+.program-card {
+    background: white;
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    opacity: 0; /* JS Animation initial state */
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.program-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.card-img { padding: 1rem; display: flex; justify-content: center; }
+.card-content { padding: 1.5rem; text-align: center; }
+
+/* =========================================
+   5. FEATURES & FORM
+   ========================================= */
+.feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: var(--warm-bg);
+    border-radius: var(--radius-l);
+}
+.feature-item .icon { font-size: 2rem; }
+
+.contact-form {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--radius-l);
+    box-shadow: var(--shadow);
+}
+.form-group { margin-bottom: 1.5rem; }
+.form-group label { display: block; margin-bottom: 0.5rem; font-weight: 700; }
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--soft-green);
+    border-radius: var(--radius-s);
+    font-family: inherit;
+}
+.full-width { width: 100%; border: none; cursor: pointer; }
+
+footer { text-align: center; padding: 2rem; font-weight: 700; color: var(--dark-green); }
+
+/* =========================================
+   6. RESPONSIVE (DESKTOP)
+   ========================================= */
+@media (min-width: 768px) {
+    /* Navbar Desktop */
+    .menu-toggle { display: none; }
+    .nav-menu {
+        position: static;
+        width: auto;
+        transform: none;
+        background: transparent;
+        box-shadow: none;
+        z-index: 1;
+    }
+    .nav-menu ul {
+        flex-direction: row;
+        gap: 1rem;
+        padding: 0;
+    }
+    .btn-highlight { margin: 0; }
+
+    /* Hero Desktop */
+    .hero-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        gap: 3rem;
+        text-align: left;
+    }
+    .hero h1 { font-size: 3.5rem; }
+    .hero-image { margin-top: 0; }
+
+    /* Grid Expands */
+    .programs-grid { grid-template-columns: repeat(3, 1fr); }
+    
+    .features-list {
+        display: flex;
+        gap: 2rem;
+    }
+    
+    .contact-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+}

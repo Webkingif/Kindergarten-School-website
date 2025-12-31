@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Little Sprouts Academy - A safe, fun, and educational kindergarten for your child.">
+    <title>Little Sprouts Academy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">🌱 Little Sprouts</a>
+
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#programs" class="nav-link">Programs</a></li>
+                    <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                    <li><a href="#contact" class="nav-link btn-highlight">Schedule Tour</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container hero-layout">
+                <div class="hero-text">
+                    <h1>Growing Happy Minds, <br><span class="highlight">One Day at a Time.</span></h1>
+                    <p>A safe, nurturing environment where your child explores, learns, and blooms.</p>
+                    <a href="#contact" class="cta-button">Join Our Family</a>
+                </div>
+                <div class="hero-image">
+                    <img src="images/kids.jpg" alt="Children playing with toys">
+                </div>
+            </div>
+        </section>
+
+        <section id="programs" class="section">
+            <div class="container">
+                <h2 class="section-title">Our Programs</h2>
+                <p class="section-subtitle">Tailored learning for every stage of growth.</p>
+
+                <div class="programs-grid">
+                    <article class="program-card fade-in">
+                        <div class="card-img" style="background-color: var(--soft-yellow);">
+                            <img src="images/1.jpg" alt="Toddler playing blocks">
+                        </div>
+                        <div class="card-content">
+                            <h3>Toddlers (1-2 Years)</h3>
+                            <p>Sensory play and social interaction to spark curiosity in our littlest learners.</p>
+                        </div>
+                    </article>
+
+                    <article class="program-card fade-in">
+                        <div class="card-img" style="background-color: var(--soft-green);">
+                            <img src="images/2.jpg" alt="Nursery kids drawing">
+                        </div>
+                        <div class="card-content">
+                            <h3>Nursery (2-3 Years)</h3>
+                            <p>Structured fun, arts & crafts, and early language development.</p>
+                        </div>
+                    </article>
+
+                    <article class="program-card fade-in">
+                        <div class="card-img" style="background-color: var(--sky-blue);">
+                            <img src="images/3.jpg" alt="Pre-K kids reading">
+                        </div>
+                        <div class="card-content">
+                            <h3>Pre-K (4-5 Years)</h3>
+                            <p>School readiness focusing on literacy, math, and confidence building.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" class="section alt-bg">
+            <div class="container">
+                <h2 class="section-title">Why Parents Love Us</h2>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <div class="icon">🛡️</div>
+                        <div class="text">
+                            <h3>Safety First</h3>
+                            <p>Secure entry systems and child-proofed classrooms.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">👩‍🏫</div>
+                        <div class="text">
+                            <h3>Certified Teachers</h3>
+                            <p>Experienced educators who love what they do.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="icon">🍎</div>
+                        <div class="text">
+                            <h3>Healthy Meals</h3>
+                            <p>Nutritious, organic snacks and lunches provided daily.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section">
+            <div class="container contact-wrapper">
+                <div class="contact-info">
+                    <h2>Visit Little Sprouts</h2>
+                    <p>We'd love to show you around. Schedule a tour today!</p>
+                    <ul class="info-list">
+                        <li>📍 123 Sunshine Lane, Happy Town</li>
+                        <li>📞 (555) 123-4567</li>
+                        <li>✉️ hello@littlesprouts.edu</li>
+                    </ul>
+                </div>
+                <form class="contact-form" id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Parent's Name</label>
+                        <input type="text" id="name" required placeholder="Jane Doe">
+                    </div>
+                    <div class="form-group">
+                        <label for="child-age">Child's Age</label>
+                        <select id="child-age">
+                            <option>1-2 Years</option>
+                            <option>2-3 Years</option>
+                            <option>4-5 Years</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="cta-button full-width">Book a Tour</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; 2025 Little Sprouts Academy. Growing with love.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
